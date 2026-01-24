@@ -1,0 +1,33 @@
+/*
+  Localizable.strings
+  Moodlytic
+
+  Created by Atiq Alam on 24/01/26.
+  
+*/
+login = "تسجيل الدخول";
+register = "تسجيل";
+signup = "إنشاء حساب";
+email = "البريد الإلكتروني";
+password = "كلمة المرور";
+forgot_password = "نسيت كلمة المرور؟";
+reflect = "التأمل";
+today = "اليوم";
+open_journal = "افتح اليوميات";
+write_thoughts = "اكتب أفكار اليوم";
+enter_your_email = "أدخل بريدك الإلكتروني";
+enter_your_password = "أدخل كلمة المرور";
+dont_have_an_account = "ليس لديك حساب؟";
+invalidMood = "المزاج المحدد غير صالح.";
+emptyJournalText = "لا يمكن أن يكون نص اليوميات فارغًا.";
+emptyEmail = "البريد الإلكتروني مطلوب.";
+weakPassword = "يجب أن تكون كلمة المرور 6 أحرف على الأقل.";
+invalidCredentials = "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
+
+localSaveFailed = "فشل الحفظ محليًا: %@";
+localFetchFailed = "فشل جلب البيانات: %@";
+aiServiceFailed = "فشل خدمة الذكاء الاصطناعي: %@";
+
+unknown = "حدث خطأ ما.";
+
+

@@ -5,6 +5,7 @@ struct AppRoot: App {
 
     @State private var showSplash = true
     @StateObject private var appState = AppState()
+    
 
     var body: some Scene {
         WindowGroup {
@@ -31,7 +32,21 @@ struct AppRoot: App {
                     
                 }
             }
-            .environmentObject(appState) // 🔥 INJECT HERE
+            .preferredColorScheme(colorScheme(for: appState.theme))
+            .environmentObject(appState)
+            .id(appState.language)
         }
     }
+    
+    private func colorScheme(for theme: Theme) -> ColorScheme? {
+            switch theme {
+            case .system:
+                return nil          // follow system
+            case .light:
+                return .light
+            case .dark:
+                return .dark
+            }
+        }
+    
 }

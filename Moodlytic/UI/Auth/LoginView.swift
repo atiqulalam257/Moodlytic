@@ -10,13 +10,13 @@ struct LoginView: View {
 
             Spacer()
 
-            Text("Login")
+            Text(text: Language.login)
                 .font(AppFont.h1())
 
             // Email
             MTextField(
-                title: "Email",
-                placeholder: "Enter your email",
+                title: Language.email.localized,
+                placeholder: Language.enter_your_email.localized,
                 text: $vm.email,
                 fieldType: .email,
                 error: vm.errorMessage == AppError.emptyEmail.errorDescription
@@ -26,8 +26,8 @@ struct LoginView: View {
 
             // Password
             MTextField(
-                title: "Password",
-                placeholder: "Enter your password",
+                title: Language.password.localized,
+                placeholder: Language.enter_your_password.localized,
                 text: $vm.password,
                 fieldType: .secure,
                 error: vm.errorMessage == AppError.weakPassword.errorDescription
@@ -47,14 +47,14 @@ struct LoginView: View {
             // Forgot password
             HStack {
                 Spacer()
-                NavigationLink("Forgot Password?") {
+                NavigationLink(Language.forgot_password.localized) {
                     ForgotPasswordView()
                 }
                 .font(AppFont.caption())
             }
 
             // Login button
-            MButton(title: "Login",
+            MButton(title: Language.login.localized,
                     isLoading: vm.isLoading,
                     isDisabled: vm.isLoading
             ){
@@ -70,10 +70,10 @@ struct LoginView: View {
 
             // Register
             HStack {
-                Text("Don't have an account?")
+                Text(Language.dont_have_an_account.localized)
                     .foregroundColor(AppColors.textSecondary)
 
-                NavigationLink("Sign Up") {
+                NavigationLink(Language.signup.localized) {
                     RegisterView()
                 }
                 .fontWeight(.semibold)

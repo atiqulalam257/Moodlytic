@@ -21,31 +21,35 @@ enum AppError: Error, LocalizedError, Equatable {
         switch self {
 
         case .invalidMood:
-            return "The selected mood is invalid."
+            return Language.invalidMood.localized
 
         case .emptyJournalText:
-            return "Journal text cannot be empty."
+            return Language.emptyJournalText.localized
 
         case .emptyEmail:
-            return "Email is required."
+            return Language.emptyEmail.localized
 
         case .weakPassword:
-            return "Password must be at least 6 characters."
+            return Language.weakPassword.localized
 
         case .invalidCredentials:
-            return "Invalid email or password."
+            return Language.invalidCredentials.localized
 
         case .localSaveFailed(let reason):
-            return "Failed to save locally: \(reason)"
+            let format = Language.localSaveFailed.localized
+            return String(format: format, reason)
 
         case .localFetchFailed(let reason):
-            return "Failed to fetch data: \(reason)"
+            let format = Language.localFetchFailed.localized
+            return String(format: format, reason)
 
         case .aiServiceFailed(let reason):
-            return "AI service failed: \(reason)"
+            let format = Language.aiServiceFailed.localized
+            return String(format: format, reason)
 
         case .unknown:
-            return "Something went wrong."
+            return Language.unknown.localized
         }
     }
 }
+

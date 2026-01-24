@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Moodlytic
+
+  Created by Atiq Alam on 24/01/26.
+  
+*/
+login = "Login";
+register = "Register";
+signup = "Sign Up";
+email = "Email";
+password = "Password";
+forgot_password = "Forgot Password?";
+reflect = "Reflect";
+today = "Today";
+open_journal = "Open Journal";
+write_thoughts = "Write today's thoughts";
+enter_your_email = "Enter your email";
+enter_your_password = "Enter your password";
+forgot_password = "Forgot Password?";
+dont_have_an_account = "Don't have an account?";
+invalidMood = "The selected mood is invalid.";
+emptyJournalText = "Journal text cannot be empty.";
+emptyEmail = "Email is required.";
+weakPassword = "Password must be at least 6 characters.";
+invalidCredentials = "Invalid email or password.";
+
+localSaveFailed = "Failed to save locally: %@";
+localFetchFailed = "Failed to fetch data: %@";
+aiServiceFailed = "AI service failed: %@";
+
+unknown = "Something went wrong.";
+
