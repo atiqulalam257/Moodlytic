@@ -17,6 +17,9 @@ enum AppFont {
     static func h2() -> Font {
         .system(size: 22, weight: .semibold, design: .rounded)
     }
+    static func h3() -> Font {
+        .system(size: 18, weight: .semibold, design: .rounded)
+    }
 
     static func body() -> Font {
         .system(size: 16, weight: .regular, design: .rounded)

@@ -26,6 +26,9 @@ final class AppContainer {
             aiService: aiService
         )
     }()
+    lazy var authRepository: AuthRepository = {
+            AuthRepositoryImpl()
+        }()
 
     // Use Cases
     lazy var saveJournalUseCase: SaveJournalEntryUseCase = {
@@ -38,6 +41,18 @@ final class AppContainer {
     
     lazy var getAllJournalEntriesUseCase: GetAllJournalEntriesUseCase = {
         GetAllJournalEntriesUseCaseImpl(repository: journalRepository)
+    }()
+    
+    lazy var loginUseCase: LoginUseCase = {
+            LoginUseCaseImpl(repository: authRepository)
+    }()
+
+    lazy var registerUseCase: RegisterUseCase = {
+            RegisterUseCaseImpl(repository: authRepository)
+    }()
+
+    lazy var resetPasswordUseCase: ResetPasswordUseCase = {
+            ResetPasswordUseCaseImpl(repository: authRepository)
     }()
 
 }

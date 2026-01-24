@@ -10,10 +10,12 @@ import SwiftUI
 
 struct SplashView: View {
 
+    @State private var scale = 0.8
+
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [AppColors.primary, AppColors.secondary,.green],
+                colors: [AppColors.primary, AppColors.secondary, .green],
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -24,13 +26,25 @@ struct SplashView: View {
                     .resizable()
                     .frame(width: 80, height: 80)
                     .foregroundColor(.white)
+                    .scaleEffect(scale)
+
                 Text("Mind Journal")
                     .font(AppFont.h1())
                     .foregroundColor(.white)
+
                 Text("A safe space for your thoughts")
                     .font(AppFont.body())
                     .foregroundColor(.white.opacity(0.85))
             }
+            .onAppear {
+                withAnimation(.easeOut(duration: 1)) {
+                    scale = 1
+                }
+            }
         }
     }
 }
+#Preview {
+    SplashView()
+}
+

@@ -28,18 +28,18 @@ struct JournalView: View {
                 .foregroundColor(AppColors.textPrimary)
             
             // ✅ Success Message
-                        if vm.isSuccess {
-                            Text("✅ Journal saved successfully")
-                                .font(AppFont.caption())
-                                .foregroundColor(AppColors.success)
-                        }
+                if vm.isSuccess {
+                    Text("✅ Journal saved successfully")
+                        .font(AppFont.caption())
+                        .foregroundColor(AppColors.success)
+                }
 
-                        // ❌ Error Message
-                        if let error = vm.errorMessage {
-                            Text(error)
-                                .font(AppFont.caption())
-                                .foregroundColor(AppColors.danger)
-                        }
+            // ❌ Error Message
+                if let error = vm.errorMessage {
+                    Text(error)
+                        .font(AppFont.caption())
+                        .foregroundColor(AppColors.danger)
+                }
 
             // Journal text
             TextEditor(text: $vm.text)
@@ -59,14 +59,13 @@ struct JournalView: View {
             )
 
             // Submit button
-            Button {
+            MButton(title: "Reflect",
+                    isLoading: vm.isLoading,
+                    isDisabled: vm.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            ){
                 Task { await vm.submit() }
-            } label: {
-                Text("Reflect")
             }
-            .buttonStyle(PrimaryButtonStyle())
-            .disabled(vm.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-
+            
             Spacer()
         }
         .padding()

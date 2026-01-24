@@ -8,23 +8,74 @@
 
 
 import SwiftUI
+
 enum AppColors {
 
-    static let primary = Color(hex: "#5B7CFA")
-    static let secondary = Color(hex: "#9AA9FF")
+    static let primary = adaptive(
+        light: "#5B7CFA",
+        dark:  "#8FA2FF"
+    )
 
-    static let background = Color(hex: "#F4F6FF")
-    static let card = Color(hex: "#FFFFFF")
+    static let secondary = adaptive(
+        light: "#9AA9FF",
+        dark:  "#6B7CFF"
+    )
 
-    static let textPrimary = Color(hex: "#1F2937")
-    static let textSecondary = Color(hex: "#6B7280")
+    static let background = adaptive(
+        light: "#F4F6FF",
+        dark:  "#0F172A"
+    )
 
-    static let divider = Color(hex: "#E5E7EB")
+    static let card = adaptive(
+        light: "#FFFFFF",
+        dark:  "#1E293B"
+    )
 
-    static let success = Color(hex: "#4ADE80")
-    static let warning = Color(hex: "#FACC15")
-    static let danger = Color(hex: "#F87171")
+    static let textPrimary = adaptive(
+        light: "#1F2937",
+        dark:  "#E5E7EB"
+    )
+
+    static let textSecondary = adaptive(
+        light: "#6B7280",
+        dark:  "#94A3B8"
+    )
+
+    static let divider = adaptive(
+        light: "#E5E7EB",
+        dark:  "#334155"
+    )
+
+    static let success = adaptive(
+        light: "#4ADE80",
+        dark:  "#22C55E"
+    )
+
+    static let warning = adaptive(
+        light: "#FACC15",
+        dark:  "#EAB308"
+    )
+
+    static let danger = adaptive(
+        light: "#F87171",
+        dark:  "#EF4444"
+    )
+
+    // MARK: - Helper
+    private static func adaptive(
+        light: String,
+        dark: String
+    ) -> Color {
+        Color(
+            UIColor { trait in
+                trait.userInterfaceStyle == .dark
+                ? UIColor(Color(hex: dark))
+                : UIColor(Color(hex: light))
+            }
+        )
+    }
 }
+
 
 extension SwiftUI.Color {
 

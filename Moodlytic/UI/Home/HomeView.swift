@@ -54,7 +54,7 @@ struct HomeView: View {
             )
         }
         .navigationDestination(isPresented: $openJournalScreen) {
-                   JournalListView()
+            JournalListView()
          }
     }
 }
