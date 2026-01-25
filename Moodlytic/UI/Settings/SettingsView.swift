@@ -14,26 +14,27 @@ struct SettingsView: View {
     @State private var showThemePicker = false
     @State private var showLaunguagePicker = false
     @Environment(\.colorScheme) var colorScheme
+    @State private var showLogoutSheet = false
 
     var body: some View {
         List {
 
             // 👤 Profile
-            Section("Profile") {
-                SettingsRow(icon: "person.fill", title: "Account"){
+            Section(StringHelper.profile.localized) {
+                SettingsRow(icon: "person.fill", title: StringHelper.account.localized){
                     
                 }
-                SettingsRow(icon: "bell.fill", title: "Notifications"){
+                SettingsRow(icon: "bell.fill", title: StringHelper.notifications.localized){
                     
                 }
-                SettingsRow(icon: "lock.fill", title: "Privacy"){
+                SettingsRow(icon: "lock.fill", title: StringHelper.privacy.localized){
                     
                 }
             }
 
             // 🎨 App
-            Section("App") {
-                SettingsRow(icon: "moon.fill", title: "Appearance") {
+            Section(StringHelper.app.localized) {
+                SettingsRow(icon: "moon.fill", title: StringHelper.appearance.localized) {
                     showThemePicker = true
                 }
                 .sheet(isPresented: $showThemePicker) {
@@ -42,7 +43,7 @@ struct SettingsView: View {
                         .presentationDragIndicator(.visible)
                 }
 
-                SettingsRow(icon: "globe", title: "Language"){
+                SettingsRow(icon: "globe", title: StringHelper.language.localized){
                     showLaunguagePicker = true
                 }.sheet(isPresented: $showLaunguagePicker){
                     LanguagePickerView()
@@ -55,15 +56,19 @@ struct SettingsView: View {
             // 🚪 Logout
             Section {
                 Button(role: .destructive) {
-                    appState.isLoggedIn = false
+                    showLogoutSheet = true
                 } label: {
                     HStack {
                         Image(systemName: "arrow.backward.circle.fill")
-                        Text("Logout")
+                        Text(StringHelper.logout.localized)
                     }
                 }
             }
         }
-        .navigationTitle("Settings")
+        .sheet(isPresented: $showLogoutSheet) {
+            LogoutConfirmationView()
+                .presentationDetents([.height(220)])
+        }
+        .navigationTitle(StringHelper.settings.localized)
     }
 }

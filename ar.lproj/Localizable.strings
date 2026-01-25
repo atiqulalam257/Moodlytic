@@ -11,7 +11,6 @@ signup = "إنشاء حساب";
 email = "البريد الإلكتروني";
 password = "كلمة المرور";
 forgot_password = "نسيت كلمة المرور؟";
-reflect = "التأمل";
 today = "اليوم";
 open_journal = "افتح اليوميات";
 write_thoughts = "اكتب أفكار اليوم";
@@ -29,5 +28,97 @@ localFetchFailed = "فشل جلب البيانات: %@";
 aiServiceFailed = "فشل خدمة الذكاء الاصطناعي: %@";
 
 unknown = "حدث خطأ ما.";
+/* Mind Journal */
+mind_journal = "مذكرات العقل";
+safe_space_thoughts = "مساحة آمنة لأفكارك";
+
+/* Register */
+register = "إنشاء حساب";
+name = "الاسم";
+enter_your_name = "أدخل اسمك";
+email = "البريد الإلكتروني";
+enter_your_email = "أدخل بريدك الإلكتروني";
+password = "كلمة المرور";
+create_password = "أنشئ كلمة مرور";
+gender = "الجنس";
+select_gender = "اختر الجنس";
+
+/* Validation */
+name_required = "الاسم مطلوب";
+emptyEmail = "البريد الإلكتروني مطلوب";
+weakPassword = "الحد الأدنى 6 أحرف";
+gender_required = "يرجى اختيار الجنس";
+
+/* Reset Password */
+reset_password = "إعادة تعيين كلمة المرور";
+reset_password_subtitle = "أنشئ كلمة مرور جديدة لحسابك.";
+new_password = "كلمة مرور جديدة";
+enter_new_password = "أدخل كلمة المرور الجديدة";
+confirm_password = "تأكيد كلمة المرور";
+reenter_password = "أعد إدخال كلمة المرور";
+
+/* Messages */
+password_reset_success = "تمت إعادة تعيين كلمة المرور بنجاح";
+passwords_do_not_match = "كلمتا المرور غير متطابقتين";
+
+/* Forgot Password */
+forgot_password_title = "نسيت كلمة المرور";
+forgot_password_subtitle = "أدخل بريدك الإلكتروني لتلقي رابط إعادة تعيين كلمة المرور.";
+reset_link_sent = "تم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني";
+send_reset_link = "إرسال رابط إعادة التعيين";
+
+/* Gender */
+gender_male = "ذكر";
+gender_female = "أنثى";
+gender_other = "آخر";
+/* Journal */
+how_are_you_feeling = "كيف تشعر اليوم؟";
+write_todays_thoughts = "اكتب أفكار اليوم";
+open_journal = "افتح اليوميات";
+write_your_thoughts = "اكتب أفكارك";
+journal_saved_success = "✅ تم حفظ اليوميات بنجاح";
+reflect = "تأمل";
+/* Tab Bar */
+home = "الرئيسية";
+journal = "اليوميات";
+emotional = "المشاعر";
+settings = "الإعدادات";
+
+/* Journal History */
+journal_history = "سجل اليوميات";
+no_entries_yet = "لا توجد إدخالات بعد";
+
+/* Emotional Insights */
+emotional_insights = "تحليلات المشاعر";
+this_week = "هذا الأسبوع";
+mostly_calm = "غالبًا هادئ 🙂";
+weekly_summary = "شعرت بالهدوء والإيجابية في معظم أيام هذا الأسبوع. استمر في الحفاظ على روتينك.";
+mood_distribution = "توزيع المشاعر";
+
+/* Moods */
+mood_happy = "سعيد";
+mood_calm = "هادئ";
+mood_anxious = "قلق";
+mood_sad = "حزين";
+
+/* Insight */
+insight = "ملاحظة";
+insight_anxious_reduction = "كتابة أفكارك في الأيام التي تشعر فيها بالقلق قللت التوتر بنسبة 30٪.";
+/* Settings */
+settings = "الإعدادات";
+profile = "الملف الشخصي";
+account = "الحساب";
+notifications = "الإشعارات";
+privacy = "الخصوصية";
+app = "التطبيق";
+appearance = "المظهر";
+language = "اللغة";
+logout = "تسجيل الخروج";
+logout_confirmation_message = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
+cancel = "إلغاء";
+theme_system = "النظام";
+theme_light = "فاتح";
+theme_dark = "داكن";
+
 
 

@@ -28,11 +28,11 @@ struct SplashView: View {
                     .foregroundColor(.white)
                     .scaleEffect(scale)
 
-                Text("Mind Journal")
+                Text(StringHelper.mind_journal.localized)
                     .font(AppFont.h1())
                     .foregroundColor(.white)
 
-                Text("A safe space for your thoughts")
+                Text(StringHelper.safe_space_thoughts.localized)
                     .font(AppFont.body())
                     .foregroundColor(.white.opacity(0.85))
             }

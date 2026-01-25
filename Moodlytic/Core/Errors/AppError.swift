@@ -21,34 +21,34 @@ enum AppError: Error, LocalizedError, Equatable {
         switch self {
 
         case .invalidMood:
-            return Language.invalidMood.localized
+            return StringHelper.invalidMood.localized
 
         case .emptyJournalText:
-            return Language.emptyJournalText.localized
+            return StringHelper.emptyJournalText.localized
 
         case .emptyEmail:
-            return Language.emptyEmail.localized
+            return StringHelper.emptyEmail.localized
 
         case .weakPassword:
-            return Language.weakPassword.localized
+            return StringHelper.weakPassword.localized
 
         case .invalidCredentials:
-            return Language.invalidCredentials.localized
+            return StringHelper.invalidCredentials.localized
 
         case .localSaveFailed(let reason):
-            let format = Language.localSaveFailed.localized
+            let format = StringHelper.localSaveFailed.localized
             return String(format: format, reason)
 
         case .localFetchFailed(let reason):
-            let format = Language.localFetchFailed.localized
+            let format = StringHelper.localFetchFailed.localized
             return String(format: format, reason)
 
         case .aiServiceFailed(let reason):
-            let format = Language.aiServiceFailed.localized
+            let format = StringHelper.aiServiceFailed.localized
             return String(format: format, reason)
 
         case .unknown:
-            return Language.unknown.localized
+            return StringHelper.unknown.localized
         }
     }
 }

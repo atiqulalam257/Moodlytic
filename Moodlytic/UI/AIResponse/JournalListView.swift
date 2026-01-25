@@ -15,13 +15,13 @@ struct JournalListView: View {
     var body: some View {
         VStack(spacing: 16) {
 
-            Text("Journal History")
+            Text(StringHelper.journal_history.localized)
                 .font(AppFont.h1())
 
             if vm.isLoading {
                 ProgressView()
             } else if vm.entries.isEmpty {
-                Text("No entries yet")
+                Text(StringHelper.no_entries_yet.localized)
                     .foregroundColor(AppColors.textSecondary)
             } else {
                 ScrollView {

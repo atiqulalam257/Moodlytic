@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 24) {
 
-            Text("Today")
+            Text(StringHelper.today.localized)
                 .font(AppFont.h1())
                 .foregroundColor(AppColors.textPrimary)
 
@@ -23,7 +23,7 @@ struct HomeView: View {
 
             CardView {
                 VStack(spacing: 16) {
-                    Text("How are you feeling today?")
+                    Text(StringHelper.how_are_you_feeling.localized)
                         .font(AppFont.body())
                 
                     // ✅ FIXED
@@ -31,12 +31,12 @@ struct HomeView: View {
                 }
             }
 
-            Button("Write today's thoughts") {
+            Button(StringHelper.write_todays_thoughts.localized) {
                 navigateToJournal = true
             }
             .buttonStyle(PrimaryButtonStyle())
             
-            Button("Open Journal") {
+            Button(StringHelper.open_journal.localized) {
                 openJournalScreen = true
             }
             .buttonStyle(PrimaryButtonStyle())

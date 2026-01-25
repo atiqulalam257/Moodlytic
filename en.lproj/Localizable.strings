@@ -11,7 +11,6 @@ signup = "Sign Up";
 email = "Email";
 password = "Password";
 forgot_password = "Forgot Password?";
-reflect = "Reflect";
 today = "Today";
 open_journal = "Open Journal";
 write_thoughts = "Write today's thoughts";
@@ -30,4 +29,92 @@ localFetchFailed = "Failed to fetch data: %@";
 aiServiceFailed = "AI service failed: %@";
 
 unknown = "Something went wrong.";
+/* Mind Journal */
+mind_journal = "Mind Journal";
+safe_space_thoughts = "A safe space for your thoughts";
+
+/* Register */
+name = "Name";
+enter_your_name = "Enter your name";
+
+password = "Password";
+create_password = "Create a password";
+gender = "Gender";
+select_gender = "Select gender";
+
+/* Validation */
+name_required = "Name is required";
+gender_required = "Please select gender";
+/* Reset Password */
+reset_password = "Reset Password";
+reset_password_subtitle = "Create a new password for your account.";
+new_password = "New Password";
+enter_new_password = "Enter new password";
+confirm_password = "Confirm Password";
+reenter_password = "Re-enter password";
+
+/* Messages */
+password_reset_success = "Password reset successfully";
+passwords_do_not_match = "Passwords do not match";
+
+/* Forgot Password */
+forgot_password_title = "Forgot Password";
+forgot_password_subtitle = "Enter your email to receive a password reset link.";
+reset_link_sent = "Reset link sent to your email";
+send_reset_link = "Send Reset Link";
+
+/* Gender */
+gender_male = "Male";
+gender_female = "Female";
+gender_other = "Other";
+/* Journal */
+how_are_you_feeling = "How are you feeling today?";
+write_todays_thoughts = "Write today's thoughts";
+open_journal = "Open Journal";
+write_your_thoughts = "Write your thoughts";
+journal_saved_success = "✅ Journal saved successfully";
+reflect = "Reflect";
+/* Tab Bar */
+home = "Home";
+journal = "Journal";
+emotional = "Emotional";
+settings = "Settings";
+/* Journal History */
+journal_history = "Journal History";
+no_entries_yet = "No entries yet";
+
+/* Emotional Insights */
+emotional_insights = "Emotional Insights";
+this_week = "This Week";
+mostly_calm = "Mostly Calm 🙂";
+weekly_summary = "You felt calm and positive most days this week. Keep maintaining your routines.";
+mood_distribution = "Mood Distribution";
+
+/* Moods */
+mood_happy = "Happy";
+mood_calm = "Calm";
+mood_anxious = "Anxious";
+mood_sad = "Sad";
+
+/* Insight */
+insight = "Insight";
+insight_anxious_reduction = "Writing your thoughts on anxious days reduced stress by 30%.";
+/* Settings */
+settings = "Settings";
+profile = "Profile";
+account = "Account";
+notifications = "Notifications";
+privacy = "Privacy";
+app = "App";
+appearance = "Appearance";
+language = "Language";
+logout = "Logout";
+logout_confirmation_message = "Are you sure you want to logout?";
+cancel = "Cancel";
+theme_system = "System";
+theme_light = "Light";
+theme_dark = "Dark";
+
+
+
 

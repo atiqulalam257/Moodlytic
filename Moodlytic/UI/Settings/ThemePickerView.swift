@@ -34,9 +34,13 @@ struct ThemePickerView: View {
 
     private func title(for theme: Theme) -> String {
         switch theme {
-        case .system: return "System"
-        case .light: return "Light"
-        case .dark: return "Dark"
+        case .system:
+            return StringHelper.theme_system.localized
+        case .light:
+            return StringHelper.theme_light.localized
+        case .dark:
+            return StringHelper.theme_dark.localized
         }
     }
+
 }

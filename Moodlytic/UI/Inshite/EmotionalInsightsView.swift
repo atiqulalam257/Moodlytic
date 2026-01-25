@@ -14,21 +14,21 @@ struct EmotionalInsightsView: View {
         ScrollView {
             VStack(spacing: 24) {
 
-                Text("Emotional Insights")
+                Text(StringHelper.emotional_insights.localized)
                     .font(AppFont.h1())
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 // 🌈 Weekly Mood Summary
                 CardView {
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("This Week")
+                        Text(StringHelper.this_week.localized)
                             .font(AppFont.caption())
                             .foregroundColor(AppColors.textSecondary)
 
-                        Text("Mostly Calm 🙂")
+                        Text(StringHelper.mostly_calm.localized)
                             .font(AppFont.h2())
 
-                        Text("You felt calm and positive most days this week. Keep maintaining your routines.")
+                        Text(StringHelper.weekly_summary.localized)
                             .font(AppFont.body())
                             .foregroundColor(AppColors.textSecondary)
                     }
@@ -37,14 +37,14 @@ struct EmotionalInsightsView: View {
                 // 📊 Mood Distribution (placeholder)
                 CardView {
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Mood Distribution")
+                        Text(StringHelper.mood_distribution.localized)
                             .font(AppFont.h3())
 
                         VStack(spacing: 8) {
-                            MoodProgressRow(title: "Happy", value: 0.5)
-                            MoodProgressRow(title: "Calm", value: 0.7)
-                            MoodProgressRow(title: "Anxious", value: 0.2)
-                            MoodProgressRow(title: "Sad", value: 0.1)
+                            MoodProgressRow(title: StringHelper.mood_happy.localized, value: 0.5)
+                            MoodProgressRow(title: StringHelper.mood_calm.localized, value: 0.7)
+                            MoodProgressRow(title: StringHelper.mood_anxious.localized, value: 0.2)
+                            MoodProgressRow(title: StringHelper.mood_sad.localized, value: 0.1)
                         }
                     }
                 }
@@ -52,10 +52,10 @@ struct EmotionalInsightsView: View {
                 // 💡 Insight Tip
                 CardView {
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Insight")
+                        Text(StringHelper.insight.localized)
                             .font(AppFont.h3())
 
-                        Text("Writing your thoughts on anxious days reduced stress by 30%.")
+                        Text(StringHelper.insight_anxious_reduction.localized)
                             .font(AppFont.body())
                     }
                 }

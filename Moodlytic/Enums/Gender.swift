@@ -9,9 +9,21 @@
 import Foundation
 
 enum Gender: String, CaseIterable, Identifiable {
-    case male = "Male"
-    case female = "Female"
-    case other = "Other"
+    case male
+    case female
+    case other
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .male:
+            return StringHelper.gender_male.localized
+        case .female:
+            return StringHelper.gender_female.localized
+        case .other:
+            return StringHelper.gender_other.localized
+        }
+    }
 }
+

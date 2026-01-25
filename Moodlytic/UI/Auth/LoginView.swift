@@ -10,13 +10,13 @@ struct LoginView: View {
 
             Spacer()
 
-            Text(text: Language.login)
+            Text(text: StringHelper.login)
                 .font(AppFont.h1())
 
             // Email
             MTextField(
-                title: Language.email.localized,
-                placeholder: Language.enter_your_email.localized,
+                title: StringHelper.email.localized,
+                placeholder: StringHelper.enter_your_email.localized,
                 text: $vm.email,
                 fieldType: .email,
                 error: vm.errorMessage == AppError.emptyEmail.errorDescription
@@ -26,8 +26,8 @@ struct LoginView: View {
 
             // Password
             MTextField(
-                title: Language.password.localized,
-                placeholder: Language.enter_your_password.localized,
+                title: StringHelper.password.localized,
+                placeholder: StringHelper.enter_your_password.localized,
                 text: $vm.password,
                 fieldType: .secure,
                 error: vm.errorMessage == AppError.weakPassword.errorDescription
@@ -47,14 +47,14 @@ struct LoginView: View {
             // Forgot password
             HStack {
                 Spacer()
-                NavigationLink(Language.forgot_password.localized) {
+                NavigationLink(StringHelper.forgot_password.localized) {
                     ForgotPasswordView()
                 }
                 .font(AppFont.caption())
             }
 
             // Login button
-            MButton(title: Language.login.localized,
+            MButton(title: StringHelper.login.localized,
                     isLoading: vm.isLoading,
                     isDisabled: vm.isLoading
             ){
@@ -70,10 +70,10 @@ struct LoginView: View {
 
             // Register
             HStack {
-                Text(Language.dont_have_an_account.localized)
+                Text(StringHelper.dont_have_an_account.localized)
                     .foregroundColor(AppColors.textSecondary)
 
-                NavigationLink(Language.signup.localized) {
+                NavigationLink(StringHelper.signup.localized) {
                     RegisterView()
                 }
                 .fontWeight(.semibold)

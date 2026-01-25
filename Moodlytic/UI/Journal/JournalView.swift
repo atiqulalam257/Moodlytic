@@ -23,13 +23,13 @@ struct JournalView: View {
         VStack(spacing: 20) {
 
             // Header
-            Text("Write your thoughts")
+            Text(StringHelper.write_your_thoughts.localized)
                 .font(AppFont.h1())
                 .foregroundColor(AppColors.textPrimary)
             
             // ✅ Success Message
                 if vm.isSuccess {
-                    Text("✅ Journal saved successfully")
+                    Text(StringHelper.journal_saved_success.localized)
                         .font(AppFont.caption())
                         .foregroundColor(AppColors.success)
                 }
@@ -59,7 +59,7 @@ struct JournalView: View {
             )
 
             // Submit button
-            MButton(title: "Reflect",
+            MButton(title: StringHelper.reflect.localized,
                     isLoading: vm.isLoading,
                     isDisabled: vm.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             ){

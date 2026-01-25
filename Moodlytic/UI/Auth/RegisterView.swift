@@ -28,21 +28,21 @@ struct RegisterView: View {
     var body: some View {
         VStack(spacing: 20) {
 
-            Text("Register")
+            Text(StringHelper.register.localized)
                 .font(AppFont.h1())
 
             // Name
             MTextField(
-                title: "Name",
-                placeholder: "Enter your name",
+                title: StringHelper.name.localized,
+                placeholder: StringHelper.enter_your_name.localized,
                 text: $name,
                 error: nameError
             )
 
             // Email
             MTextField(
-                title: "Email",
-                placeholder: "Enter your email",
+                title: StringHelper.email.localized,
+                placeholder: StringHelper.enter_your_email.localized,
                 text: $email,
                 fieldType: .email,
                 error: emailError
@@ -50,8 +50,8 @@ struct RegisterView: View {
 
             // Password
             MTextField(
-                title: "Password",
-                placeholder: "Create a password",
+                title: StringHelper.password.localized,
+                placeholder: StringHelper.create_password.localized,
                 text: $password,
                 fieldType: .secure,
                 error: passwordError
@@ -60,15 +60,14 @@ struct RegisterView: View {
             // Gender Picker
             VStack(alignment: .leading, spacing: 6) {
 
-                Text("Gender")
+                Text(StringHelper.gender.localized)
                     .font(AppFont.caption())
                     .foregroundColor(AppColors.textSecondary)
 
-                Picker("Gender", selection: $selectedGender) {
-                    Text("Select gender").tag(Gender?.none)
+                Picker(StringHelper.gender.localized, selection: $selectedGender) {
+                    Text(StringHelper.select_gender.localized).tag(Gender?.none)
                     ForEach(Gender.allCases) { gender in
-                        Text(gender.rawValue)
-                            .tag(Gender?.some(gender))
+                        Text(gender.title).tag(gender)
                     }
                 }
                 .pickerStyle(.menu)
@@ -93,7 +92,7 @@ struct RegisterView: View {
             }
 
             // Register Button
-            MButton(title: "Register"){
+            MButton(title: StringHelper.register.localized){
                 validate()
             }
 
@@ -114,10 +113,10 @@ struct RegisterView: View {
 
     // MARK: - Validation
     private func validate() {
-        nameError = name.isEmpty ? "Name is required" : nil
-        emailError = email.isEmpty ? "Email is required" : nil
-        passwordError = password.count < 6 ? "Minimum 6 characters" : nil
-        genderError = selectedGender == nil ? "Please select gender" : nil
+        nameError = name.isEmpty ? StringHelper.name_required.localized : nil
+        emailError = email.isEmpty ? StringHelper.emptyEmail.localized : nil
+        passwordError = password.count < 6 ? StringHelper.weakPassword.localized : nil
+        genderError = selectedGender == nil ? StringHelper.select_gender.localized : nil
 
         guard
             nameError == nil,

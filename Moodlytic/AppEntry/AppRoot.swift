@@ -5,7 +5,6 @@ struct AppRoot: App {
 
     @State private var showSplash = true
     @StateObject private var appState = AppState()
-    
 
     var body: some Scene {
         WindowGroup {
@@ -20,7 +19,6 @@ struct AppRoot: App {
                                 }
                             }
                         }
-
                 } else {
                     NavigationStack {
                         if appState.isLoggedIn {
@@ -28,25 +26,32 @@ struct AppRoot: App {
                         } else {
                             LoginView()
                         }
-                    }.transition(.opacity)
-                    
+                    }
+                    .transition(.opacity)
                 }
             }
+            // 🌍 LANGUAGE
+            .environment(\.locale, appState.language.locale)
+
+            // 🌗 THEME
             .preferredColorScheme(colorScheme(for: appState.theme))
-            .environmentObject(appState)
+
+            // 🔄 FORCE REBUILD
             .id(appState.language)
+
+            // 🌱 STATE
+            .environmentObject(appState)
         }
     }
-    
+
     private func colorScheme(for theme: Theme) -> ColorScheme? {
-            switch theme {
-            case .system:
-                return nil          // follow system
-            case .light:
-                return .light
-            case .dark:
-                return .dark
-            }
+        switch theme {
+        case .system:
+            return nil
+        case .light:
+            return .light
+        case .dark:
+            return .dark
         }
-    
+    }
 }

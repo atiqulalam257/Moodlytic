@@ -20,37 +20,37 @@ struct ResetPasswordView: View {
     var body: some View {
         VStack(spacing: 24) {
 
-            Text("Reset Password")
+            Text(StringHelper.reset_password_subtitle)
                 .font(AppFont.h1())
 
-            Text("Create a new password for your account.")
+            Text(StringHelper.create_password.localized)
                 .font(AppFont.body())
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)
 
             MTextField(
-                title: "New Password",
-                placeholder: "Enter new password",
+                title: StringHelper.new_password.localized,
+                placeholder: StringHelper.enter_new_password.localized,
                 text: $newPassword,
                 fieldType: .secure,
                 error: newPasswordError
             )
 
             MTextField(
-                title: "Confirm Password",
-                placeholder: "Re-enter password",
+                title: StringHelper.confirm_password.localized,
+                placeholder: StringHelper.reenter_password.localized,
                 text: $confirmPassword,
                 fieldType: .secure,
                 error: confirmPasswordError
             )
 
             if isSuccess {
-                Text("Password reset successfully")
+                Text(StringHelper.password_reset_success.localized)
                     .font(AppFont.caption())
                     .foregroundColor(AppColors.success)
             }
 
-            Button("Reset Password") {
+            Button(StringHelper.reset_password.localized) {
                 validate()
             }
             .buttonStyle(PrimaryButtonStyle())
@@ -63,10 +63,10 @@ struct ResetPasswordView: View {
 
     private func validate() {
         newPasswordError =
-            newPassword.count < 6 ? "Minimum 6 characters" : nil
+        newPassword.count < 6 ? StringHelper.weakPassword.localized : nil
 
         confirmPasswordError =
-            newPassword != confirmPassword ? "Passwords do not match" : nil
+        newPassword != confirmPassword ? StringHelper.passwords_do_not_match.localized : nil
 
         guard
             newPasswordError == nil,

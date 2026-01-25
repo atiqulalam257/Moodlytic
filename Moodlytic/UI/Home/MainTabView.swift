@@ -19,7 +19,7 @@ struct MainTabView: View {
             }
             .tabItem {
                 Image(systemName: "house.fill")
-                Text("Home")
+                Text(StringHelper.home.localized)
             }
 
             // 📓 Journal
@@ -28,7 +28,7 @@ struct MainTabView: View {
             }
             .tabItem {
                 Image(systemName: "book.closed.fill")
-                Text("Journal")
+                Text(StringHelper.journal.localized)
             }
 
             // 🧠 Emotional
@@ -37,7 +37,7 @@ struct MainTabView: View {
             }
             .tabItem {
                 Image(systemName: "brain.head.profile")
-                Text("Emotional")
+                Text(StringHelper.emotional.localized)
             }
 
             // ⚙️ Settings
@@ -46,7 +46,7 @@ struct MainTabView: View {
             }
             .tabItem {
                 Image(systemName: "gearshape.fill")
-                Text("Settings")
+                Text(StringHelper.settings.localized)
             }
         }
         .tint(AppColors.primary) // active tab color

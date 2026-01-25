@@ -11,33 +11,34 @@ import Combine
 
 @MainActor
 final class AppState: ObservableObject {
+
     @Published var language: AppLanguage {
-           didSet {
-               UserDefaults.standard.set([language.rawValue], forKey: "AppleLanguages")
-               UserDefaults.standard.synchronize()
-           }
-       }
-    
+        didSet {
+            UserDefaults.standard.set([language.rawValue], forKey: "AppleLanguages")
+        }
+    }
+
+    @Published var theme: Theme {
+        didSet {
+            UserDefaults.standard.set(theme.rawValue, forKey: "app_theme")
+        }
+    }
+
     @Published var isLoggedIn: Bool {
         didSet {
             UserDefaults.standard.set(isLoggedIn, forKey: "isLoggedIn")
         }
     }
-    @Published var theme: Theme {
-            didSet {
-                UserDefaults.standard.set(theme.rawValue, forKey: "app_theme")
-            }
-    }
 
-    
     init() {
         let savedTheme = UserDefaults.standard.string(forKey: "app_theme")
         self.theme = Theme(rawValue: savedTheme ?? "") ?? .system
+
         self.isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-        // Language
+
         let savedLang = UserDefaults.standard.array(forKey: "AppleLanguages")?.first as? String
         self.language = AppLanguage(rawValue: savedLang ?? "") ?? .english
     }
-    
 }
+
 

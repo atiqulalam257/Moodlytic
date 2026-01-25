@@ -17,29 +17,29 @@ struct ForgotPasswordView: View {
     var body: some View {
         VStack(spacing: 24) {
 
-            Text("Forgot Password")
+            Text(StringHelper.forgot_password_title.localized)
                 .font(AppFont.h1())
 
-            Text("Enter your email to receive a password reset link.")
+            Text(StringHelper.forgot_password_subtitle.localized)
                 .font(AppFont.body())
                 .foregroundColor(AppColors.textSecondary)
                 .multilineTextAlignment(.center)
 
             MTextField(
-                title: "Email",
-                placeholder: "Enter your email",
+                title: StringHelper.email.localized,
+                placeholder: StringHelper.enter_your_name.localized,
                 text: $email,
                 fieldType: .email,
                 error: emailError
             )
 
             if isSuccess {
-                Text("Reset link sent to your email")
+                Text(StringHelper.reset_link_sent.localized)
                     .font(AppFont.caption())
                     .foregroundColor(AppColors.success)
             }
 
-            Button("Send Reset Link") {
+            Button(StringHelper.send_reset_link.localized) {
                 validate()
             }
             .buttonStyle(PrimaryButtonStyle())
@@ -51,7 +51,7 @@ struct ForgotPasswordView: View {
     }
 
     private func validate() {
-        emailError = email.isEmpty ? "Email is required" : nil
+        emailError = email.isEmpty ? StringHelper.emptyEmail.localized : nil
 
         guard emailError == nil else { return }
 
