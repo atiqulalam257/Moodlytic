@@ -14,7 +14,7 @@ final class AppState: ObservableObject {
 
     @Published var language: AppLanguage {
         didSet {
-            UserDefaults.standard.set([language.rawValue], forKey: "AppleLanguages")
+            UserDefaults.standard.set(language.rawValue, forKey: "AppleLanguages")
         }
     }
 
@@ -36,7 +36,7 @@ final class AppState: ObservableObject {
 
         self.isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
 
-        let savedLang = UserDefaults.standard.array(forKey: "AppleLanguages")?.first as? String
+        let savedLang = UserDefaults.standard.string(forKey: "AppleLanguages")
         self.language = AppLanguage(rawValue: savedLang ?? "") ?? .english
     }
 }
